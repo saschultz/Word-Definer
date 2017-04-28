@@ -14,4 +14,7 @@ class Word
     @@words
   end
 
+  def Word.clear
+    @@words = []
+  end
 end
