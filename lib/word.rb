@@ -1,11 +1,12 @@
 class Word
   @@words = []
 
-  attr_accessor(:name, :id)
+  attr_accessor(:name, :id, :definitions)
 
   def initialize(attributes)
     @name = attributes.fetch(:name)
     @id = @@words.length.+(1)
+    @definitions = []
   end
 
   def save
@@ -28,5 +29,9 @@ class Word
       end
     end
     found_word
+  end
+
+  def add_definition(definition)
+    @definitions.push(definition)
   end
 end

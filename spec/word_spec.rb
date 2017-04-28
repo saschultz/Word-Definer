@@ -53,4 +53,13 @@ describe 'Word' do
     expect(Word.find(test_word_2.id)).to(eq(test_word_2))
     end
   end
+
+  describe '#add_definition' do
+    it 'adds a new definition to a word' do
+      test_word = Word.new({:name => 'serendipity'})
+      test_definition = Definition.new({:content => 'the occurrence and development of events by chance in a happy or beneficial way.'})
+      test_word.add_definition(test_definition)
+    expect(test_word.definitions).to(eq([test_definition]))
+    end
+  end
 end
