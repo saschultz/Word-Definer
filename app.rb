@@ -1,7 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require './lib/word'
 also_reload 'lib/**/*.rb'
+require './lib/word'
+require './lib/definition'
 
 get '/' do
   @dictionary = Word.all
@@ -17,20 +18,23 @@ post '/dictionary' do
 end
 
 get '/definitions/:id' do
+  @definitions = Definition.all
   @word = Word.find(params.fetch('id').to_i)
   erb :definitions
 end
 
-get '/definitions/:id/added_content' do
+get '/definitions/:id' do
+  @definitions = Definition.all
   @word = Word.find(params.fetch('id').to_i)
   erb :definitions
 end
 
-post '/definitions/:id/added_content' do
+post '/definitions/:id' do
+  @word = Word.find(params.fetch('id').to_i)
   definition = params.fetch('definition')
-  @definition = Definition.new({content: definition}).save
-  @word = Word.find(params.fetch('word_id').to_i)
-  @word.add_definition(@definition)
+  definition = Definition.new({content: definition}).save
+  @definitions = Definition.all
+  # @word.add_definition(definition)
   redirect '/definitions/:id'
   erb :definitions
 end

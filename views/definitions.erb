@@ -1,6 +1,7 @@
 <h2>Add Definitions to your word!</h2>
 
-<form action="/definitions/:id/added_content" method="post">
+<form action="/definitions/:id" method="post">
+
   <div class="form-group">
     <label for="definition">Enter a definition to build your dictionary:</label>
     <input type="text" name="definition" class="form-control">
@@ -10,6 +11,12 @@
 
 <h3>Definitions:</h3>
 
+<ul>
+  <% @definitions.each() do |definition| %>
+    <li><%= definition.content() %></li>
+    <% end %>
+
+</ul>
 
 
 <a href="/">Home</a>
