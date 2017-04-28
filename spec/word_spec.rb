@@ -38,9 +38,18 @@ describe 'Word' do
 
   describe '#id' do
     it 'returns the id of the word' do
-      test_word =  Word.new({:name => 'serendipity'})
+      test_word = Word.new({:name => 'serendipity'})
     expect(test_word.id).to(eq(1))
     end
   end
 
+  describe '.find' do
+    it 'returns a word by its id number' do
+      test_word_1 = Word.new({:name => 'serendipity'})
+      test_word_1.save
+      test_word_2 = Word.new({:name => 'zemblanity'})
+      test_word_2.save
+    expect(Word.find(test_word_2.id)).to(eq(test_word_2))  
+    end
+  end
 end
