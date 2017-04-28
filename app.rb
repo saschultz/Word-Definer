@@ -13,7 +13,6 @@ post '/dictionary' do
   word = params.fetch('word')
   Word.new({name: word}).save
   @dictionary = Word.all
-  redirect '/'
   erb :index
 end
 
@@ -24,11 +23,9 @@ get '/definitions/:id' do
 end
 
 post '/definitions/:id/content' do
-  @word = Word.find(params.fetch('id').to_i)
   definition = params.fetch('definition')
-  definition = Definition.new({content: definition}).save
+  @definition = Definition.new({content: definition}).save
+  @word = Word.find(params.fetch('id').to_i)
   @definitions = Definition.all
-  # @word.add_definition(definition)
-  redirect '/definitions/:id'
   erb :definitions
 end
