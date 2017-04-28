@@ -23,13 +23,7 @@ get '/definitions/:id' do
   erb :definitions
 end
 
-get '/definitions/:id' do
-  @definitions = Definition.all
-  @word = Word.find(params.fetch('id').to_i)
-  erb :definitions
-end
-
-post '/definitions/:id' do
+post '/definitions/:id/content' do
   @word = Word.find(params.fetch('id').to_i)
   definition = params.fetch('definition')
   definition = Definition.new({content: definition}).save

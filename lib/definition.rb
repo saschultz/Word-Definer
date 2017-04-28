@@ -27,7 +27,6 @@ class Definition
         found_definition = definition
       end
     end
-    found_definition    
+    found_definition
   end
-
 end
