@@ -1,10 +1,11 @@
 class Definition
   @@definitions = []
 
-  attr_accessor(:content)
+  attr_accessor(:content, :id)
 
   def initialize(attributes)
     @content = attributes.fetch(:content)
+    @id = @@definitions.length.+(1)
   end
 
   def Definition.all
@@ -18,4 +19,5 @@ class Definition
   def Definition.clear
     @@definitions = []
   end
+
 end

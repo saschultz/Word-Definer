@@ -30,3 +30,10 @@ describe '.clear' do
   expect(Definition.all).to(eq([]))
   end
 end
+
+describe '#id' do
+  it 'returns the id of the definition' do
+    test_definition = Definition.new({:content => 'the occurrence and development of events by chance in a happy or beneficial way.'})
+  expect(test_definition.id).to(eq(1))  
+  end
+end
