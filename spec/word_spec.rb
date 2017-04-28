@@ -9,10 +9,19 @@ describe 'Word' do
     end
   end
 
-  describe '#words' do
-    it 'initially returns an empty array of words' do
+  describe '#save' do
+    it 'saves a word to the array of words' do
       test_word = Word.new({:name => 'serendipity'})
-    expect(test_word.words).to(eq([]))
+      test_word.save
+      expect(Word.all).to(eq([test_word]))
     end
   end
+
+  # describe '.all' do
+  #   it 'initially returns an empty array of words' do
+  #     Word.new({:name => 'serendipity'})
+  #   expect(Word.all).to(eq([]))
+  #   end
+  # end
+
 end
