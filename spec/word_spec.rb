@@ -33,7 +33,7 @@ describe 'Word' do
     it 'empties out all the saved words' do
       Word.new({:name => 'serendipity'})
       Word.clear
-      expect(Word.all).to(eq([]))
+    expect(Word.all).to(eq([]))
     end
   end
 
