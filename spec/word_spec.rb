@@ -1,5 +1,6 @@
 require 'rspec'
 require 'word'
+require 'definition'
 
 describe 'Word' do
   before() do
@@ -49,7 +50,7 @@ describe 'Word' do
       test_word_1.save
       test_word_2 = Word.new({:name => 'zemblanity'})
       test_word_2.save
-    expect(Word.find(test_word_2.id)).to(eq(test_word_2))  
+    expect(Word.find(test_word_2.id)).to(eq(test_word_2))
     end
   end
 end
