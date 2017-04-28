@@ -6,7 +6,7 @@ Dictionary Builder Webpage
 
 ## Description
 
-As the second independent project at Epicodus as a Ruby student, this project was to create a website for kids where they can enter words they would like to add to their online dictionary. The site will add each word to their dictionary list, and when each word is clicked on, they are taken to a page where they can enter the definition(s) for the word.
+As the second independent project at Epicodus as a Ruby student, this project was to create a website for kids where they can enter words they would like to add to their online dictionary. The site will add each word to their dictionary list, and when each word is clicked on, they are taken to a page where they can enter the definition(s) for the word. You can see the page live: https://intense-beach-92960.herokuapp.com/
 
 ## Setup/Installation Requirements
 
