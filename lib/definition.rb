@@ -1,6 +1,6 @@
 class Definition
   @@definitions = []
-  
+
   attr_accessor(:content)
 
   def initialize(attributes)
@@ -9,5 +9,9 @@ class Definition
 
   def Definition.all
     @@definitions
+  end
+
+  def save
+    @@definitions.push(self)
   end
 end

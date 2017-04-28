@@ -14,3 +14,11 @@ describe '.all' do
   expect(Definition.all).to(eq([]))
   end
 end
+
+describe '#save' do
+  it 'saves a definition to the array of definitions' do
+    test_definition = Definition.new({:content => 'the occurrence and development of events by chance in a happy or beneficial way.'})
+    test_definition.save
+  expect(Definition.all).to(eq([test_definition]))  
+  end
+end

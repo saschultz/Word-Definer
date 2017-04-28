@@ -18,7 +18,7 @@ describe 'Word' do
     it 'saves a word to the array of words' do
       test_word = Word.new({:name => 'serendipity'})
       test_word.save
-      expect(Word.all).to(eq([test_word]))
+    expect(Word.all).to(eq([test_word]))
     end
   end
 
