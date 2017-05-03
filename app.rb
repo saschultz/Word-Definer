@@ -27,7 +27,7 @@ get '/words/:id' do
   erb :definitions
 end
 
-post '/words/:id/content' do
+post '/words/definitions' do
   definition = params.fetch('definition')
   @word = Word.find(params.fetch('word_id').to_i)
   @word.add_definition(Definition.new({content: definition}))

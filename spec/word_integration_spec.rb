@@ -3,7 +3,7 @@ require './app'
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-describe 'the word path', {:type => :feature} do
+describe 'the word to definition path', {:type => :feature} do
   it 'processes the user entry and returns the word' do
     visit '/'
     fill_in 'word', :with => 'heart'
