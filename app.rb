@@ -16,16 +16,16 @@ post '/dictionary' do
   erb :index
 end
 
-get '/definitions/:id' do
-  @definitions = Definition.all
+get '/words/:id' do
   @word = Word.find(params.fetch('id').to_i)
+  @definitions = @word.definitions
   erb :definitions
 end
 
-post '/definitions/:id/content' do
+post '/words/:id/content' do
   definition = params.fetch('definition')
   @definition = Definition.new({content: definition}).save
-  @word = Word.find(params.fetch('id').to_i)
-  @definitions = Definition.all
+  @word = Word.find(params.fetch('word_id').to_i)
+  @word.add_definition(@definition)
   erb :definitions
 end
