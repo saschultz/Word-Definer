@@ -9,6 +9,12 @@ get '/' do
   erb :index
 end
 
+get '/clear' do
+  Word.clear
+  redirect '/'
+  erb :index
+end
+
 post '/dictionary' do
   word = params.fetch('word')
   Word.new({name: word}).save
@@ -18,8 +24,6 @@ end
 
 get '/words/:id' do
   @word = Word.find(params.fetch('id').to_i)
-  # @definitions = @word.definitions
-
   erb :definitions
 end
 
