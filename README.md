@@ -6,7 +6,7 @@ Dictionary Builder Webpage
 
 ## Description
 
-As the second independent project at Epicodus as a Ruby student, this project was to create a website for kids where they can enter words they would like to add to their online dictionary. The site will add each word to their dictionary list, and when each word is clicked on, they are taken to a page where they can enter the definition(s) for the word. You can see the page live: https://intense-beach-92960.herokuapp.com/
+As the second independent project at Epicodus as a Ruby student, this project was to create a website for kids where they can enter words they would like to add to their online dictionary. The site will add each word to their dictionary list, and when each word is clicked on, they are taken to a page where they can enter the definition(s) for the word. You can see the page live: https://git.heroku.com/immense-shore-36983.git
 
 ## Setup/Installation Requirements
 
@@ -17,7 +17,7 @@ As the second independent project at Epicodus as a Ruby student, this project wa
 
 ## Known Bugs
 
-They id method is not following each words definitions. To the user, this makes it so that each definition they add will add to every word they've entered, not just the current word they are working on.
+None known.
 
 ## Support and contact details
 
