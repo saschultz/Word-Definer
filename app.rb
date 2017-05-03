@@ -18,14 +18,14 @@ end
 
 get '/words/:id' do
   @word = Word.find(params.fetch('id').to_i)
-  @definitions = @word.definitions
+  # @definitions = @word.definitions
+
   erb :definitions
 end
 
 post '/words/:id/content' do
   definition = params.fetch('definition')
-  @definition = Definition.new({content: definition}).save
   @word = Word.find(params.fetch('word_id').to_i)
-  @word.add_definition(@definition)
+  @word.add_definition(Definition.new({content: definition}))
   erb :definitions
 end
